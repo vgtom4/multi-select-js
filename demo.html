@@ -1,0 +1,40 @@
+<!-- base d'une page html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo custom multi-select</title>
+</head>
+<body>
+    <h1>Demo custom multi-select</h1>
+
+    <div class="chambreSelector">
+                    
+        <link rel="stylesheet" href="multi-select.css">
+        <div id="multi-select">
+            <label for="items-selected" style="display: none;">Chamber(s) selected</label>
+            <div id="items-selected" data-items-selected></div>
+            <label for="items-available">Chamber(s) available</label>
+            <div id="items-available" data-items-available></div>
+        </div>
+        <script src="multi-select.js"></script>
+        <script>
+            // paramètres de button d'item
+            titleAvailable = "Add the chamber";
+            titleSelected = "Remove the chamber";
+            innerHTMLLeftAvailable = "N°";
+            innerHTMLLeftSelected = "N°";
+            innerHTMLRightAvailable = "";
+            innerHTMLRightSelected = " ✖";
+            idItem = "item";
+
+            listItemsUpdateStr = ["1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25"];
+            listAllItemsStr = ["1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36"];
+
+            // initialisation
+            UpdateItems(listItemsUpdateStr, listAllItemsStr);
+        </script>
+
+    </div>
+</body>
+</html>
