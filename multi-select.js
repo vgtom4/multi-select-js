@@ -44,7 +44,7 @@ function moveItem(item) {
 }
 
 // Function to update the value of the hidden input containing the list of selected items
-function updateItemSelectionInput() {
+function updateInputItemsSelection() {
     document.getElementById('inputSelectedItems').value = document.getElementById('items-selected').getAttribute('data-items-selected').split(',').join(',');
 }
 
@@ -109,7 +109,7 @@ function CreateButton(value, title = "", innerHTMLLeft = "", innerHTMLRight = ""
     button.style.order = value;
     button.addEventListener('click', function () {
         moveItem(this);
-        updateItemSelectionInput();
+        updateInputItemsSelection();
     });
     button.innerHTML = innerHTMLLeft + value + innerHTMLRight;
     return button;
