@@ -121,7 +121,7 @@ function UpdateItems(listItemsUpdateStr, listAllItemsStr) {
     var itemsSelected = document.querySelector('#items-selected');
 
     var listItemsUpdate = listItemsUpdateStr.map(String);
-    var listChambresHotel = listAllItemsStr.split(", ").map(String);
+    var listChambresHotel = listAllItemsStr.map(String);
 
     var itemsToRemove = listChambresHotel.filter(function(item) {
         return !listItemsUpdate.includes(item);
