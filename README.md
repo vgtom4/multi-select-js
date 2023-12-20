@@ -4,6 +4,7 @@ In the HTML page  :
              
         <link rel="stylesheet" href="multi-select.css">
         <div id="multi-select">
+            <input type='hidden' id='inputSelectedItems' name="listchambres">
             <label for="items-selected" style="display: none;">Chamber(s) selected</label>
             <div id="items-selected" data-items-selected></div>
             <label for="items-available">Chamber(s) available</label>
