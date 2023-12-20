@@ -43,6 +43,11 @@ function moveItem(item) {
     switchVisibilityLabel();
 }
 
+// Function to update the value of the hidden input containing the list of selected items
+function updateItemSelectionInput() {
+    document.getElementById('inputSelectedItems').value = document.getElementById('items-selected').getAttribute('data-items-selected').split(',').join(',');
+}
+
 // Function to switch the visibility of the labels of the lists of available and selected items (if there are no items in the list, the label is hidden)
 function switchVisibilityLabel() {
     var itemsSelected = document.querySelector('#items-selected');
@@ -104,6 +109,7 @@ function CreateButton(value, title = "", innerHTMLLeft = "", innerHTMLRight = ""
     button.style.order = value;
     button.addEventListener('click', function () {
         moveItem(this);
+        updateItemSelectionInput();
     });
     button.innerHTML = innerHTMLLeft + value + innerHTMLRight;
     return button;
@@ -115,9 +121,9 @@ function UpdateItems(listItemsUpdateStr, listAllItemsStr) {
     var itemsSelected = document.querySelector('#items-selected');
 
     var listItemsUpdate = listItemsUpdateStr.map(String);
-    var listAllItems = listAllItemsStr.map(String);
+    var listChambresHotel = listAllItemsStr.split(", ").map(String);
 
-    var itemsToRemove = listAllItems.filter(function(item) {
+    var itemsToRemove = listChambresHotel.filter(function(item) {
         return !listItemsUpdate.includes(item);
     });
 
